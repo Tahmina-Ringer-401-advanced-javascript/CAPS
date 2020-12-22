@@ -24,3 +24,5 @@ events.on('delivered', thankYouHandler);
 function thankYouHandler(payload) {
   console.log(`Thank you! ${payload.orderId}`);
 }
+
+module.exports = thankYouHandler;

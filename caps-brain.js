@@ -1,9 +1,9 @@
-const events = require('./event-pool');
+const eventPool = require('./events-pool');
 
-require('./driver');
-require('./vendor');
+require('./modules/driver');
+require('./modules/vendor');
 
-function logger (events, payload){
+function logger (eventPool, payload){
   let timeStamp = Math.floor(Date.now() / 1000);
   console.log('EVENT', timeStamp, payload);
 }
@@ -14,3 +14,5 @@ events.on('delivered', (payload) => {
 logger('delivered', payload)
   console.log('Thank you!');
 });
+
+module.exports = logger;
