@@ -1,9 +1,9 @@
 'use strict';
 
 const capsHandler = require('../caps-brain');
-const driverHandler = require('../driver');
+const driverHandler = require('../modules/driver');
 const events = require('../events-pool');
-const vendorHandler = require('../vendor');
+const vendorHandler = require('../modules/vendor');
 
 describe('event handler', () => {
   let consoleSpy;
@@ -20,7 +20,7 @@ describe('event handler', () => {
   it('pickup handler', () => {
     events.emit('pickup', {orderId: 1});
     jest.useFakeTimers();
-    expect(setTimeout).toHaveBeenCalledTimes(2);
+    expect(consoleSpy).toBeCalled();
   });
   it('Delivered Handler', () => {
     events.emit('delivered', {orderId: 1});
