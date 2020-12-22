@@ -1,6 +1,5 @@
 'use strict';
 
-const { emit, on } = require('process');
 const events = require('../events-pool');
 
 events.on('pickup', pickUpHandler);
@@ -20,5 +19,3 @@ function deliveredHandler (payload) {
     events.emit('delivered', payload)
   }, 3000)
 }
-
-module.exports = { deliveredHandler, pickUpHandler}

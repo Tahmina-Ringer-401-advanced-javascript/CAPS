@@ -1,7 +1,5 @@
 'use strict';
 
-const { beforeEach, afterEach, it, expect } = require('@jest/globals');
-const { describe } = require('yargs');
 const capsHandler = require('../caps-brain');
 const driverHandler = require('../driver');
 const events = require('../events-pool');
@@ -16,15 +14,16 @@ describe('event handler', () => {
     consoleSpy.mockRestore();
   });
   it('thank you handler', () => {
-    events.emit('delivered', `${orderId}`);
+    events.emit('delivered', {orderId: 1});
     expect(consoleSpy).toBeCalled();
   });
   it('pickup handler', () => {
-    events.emit('pickup', `${orderId}`);
-    expect(consoleSpy).toBeCalled();
+    events.emit('pickup', {orderId: 1});
+    jest.useFakeTimers();
+    expect(setTimeout).toHaveBeenCalledTimes(2);
   });
   it('Delivered Handler', () => {
-    events.emit('delivered', `${orderId}`);
+    events.emit('delivered', {orderId: 1});
     expect(consoleSpy).toBeCalled();
   })
 })
