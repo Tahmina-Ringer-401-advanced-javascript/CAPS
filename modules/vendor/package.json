@@ -1,11 +1,11 @@
 {
-  "name": "caps-brain",
+  "name": "vendor",
   "version": "1.0.0",
   "description": "",
-  "main": "caps-brain.js",
+  "main": "vendor.js",
   "scripts": {
     "test": "jest --coverage --verbose",
-    "start": "node caps-brain.js"
+    "start": "node vendor.js"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,11 @@
-'use strict';
+// 'use strict';
 
-const Events = require('events');
+// const io = require('socket.io-client');
 
-const events = new Events();//makes new event pool -- Only need to use one
+// const host = 'http://localhost:3000';
 
-module.exports = events;
+// const storeConnect = io.connect(host);
+
+// storeConnect.emit('Hi');
+
+// module.exports = storeConnect;

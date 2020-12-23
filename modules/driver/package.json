@@ -1,11 +1,11 @@
 {
-  "name": "caps-brain",
+  "name": "driver",
   "version": "1.0.0",
   "description": "",
-  "main": "caps-brain.js",
+  "main": "driver.js",
   "scripts": {
     "test": "jest --coverage --verbose",
-    "start": "node caps-brain.js"
+    "start": "node driver.js"
   },
   "repository": {
     "type": "git",
