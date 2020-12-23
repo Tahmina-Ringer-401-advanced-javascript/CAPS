@@ -4,7 +4,7 @@ by Tahmina Ringer
 
 ## Links/Resources
 
-- [GitHub PR](https://github.com/Tahmina-Ringer-401-advanced-javascript/CAPS/pull/1)
+- [GitHub PR](https://github.com/Tahmina-Ringer-401-advanced-javascript/CAPS/pull/5)
 
 1. First building phase of the CAPS system, writen in Node.js. This first build is to set up a system of events and handlers.
 2. Second building phase of the CAPS system, writed in Node.js. We refactored the code to a Socket.io event listener network. The core fuctionality of the app remained the same.
