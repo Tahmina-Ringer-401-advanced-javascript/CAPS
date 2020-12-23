@@ -1,9 +1,10 @@
 'use strict';
 
 const capsHandler = require('../caps-brain');
-const driverHandler = require('../modules/driver');
-const events = require('../events-pool');
-const vendorHandler = require('../modules/vendor');
+const driverHandler = require('../modules/driver/driverdriver');
+const vendorHandler = require('../modules/vendor/vendorvendor');
+const io = require('socket.io-client');
+const host = 'http://localhost:3000';
 
 describe('event handler', () => {
   let consoleSpy;
