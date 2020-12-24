@@ -5,7 +5,9 @@ const faker = require('faker');
 const io = require('socket.io-client');
 const host = "http://localhost:3000/caps";
 const capsConnect = io.connect(host);
-const storeName = process.env.STORE;
+const storeName = 'acme-widge';
+const order = process.argv.splice(2)[0];
+console.log(order)
 
 capsConnect.on('delivered', thankYouHandler);
 
@@ -15,6 +17,7 @@ function thankYouHandler(payload) {
 }
 
 capsConnect.emit('join',process.env.STORE);
+capsConnect.emit('getall');
 
 setInterval(() => {
   console.log(storeName);
@@ -29,4 +32,13 @@ setInterval(() => {
   console.log('order picked up and in transit!')
 }, 5000);
 
+capsConnect.on('order', message => {
+  console.log('in the VENDOR - New order for delivery', message.payload);
+  capsConnect.emit('received', message);
+})
+
+// capsConnect.on('added', () => {
+//   console.log('in the VENDOR - heard ADDED so I am disconnecting');
+//   capsConnect.disconnect();
+// })
 
